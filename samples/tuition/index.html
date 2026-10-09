@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ascend Tuition Centre · Maths &amp; Science, Kothrud, Pune (sample site)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Nunito+Sans:opsz,wght@6..12,400;6..12,700&display=swap" rel="stylesheet">
+<style>
+:root{--board:#18392B;--board-2:#204A38;--chalk:#F5F1E6;--chalk-2:#E9E2D0;--yellow:#F2C14E;--ink:#13261C;--ink-2:#46594E;--line:#D9D2BF}
+*{box-sizing:border-box}
+body{margin:0;background:var(--chalk);color:var(--ink);font:400 16.5px/1.6 "Nunito Sans",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.sample-bar{display:block;background:#1B1915;color:#F7F3EA;font-size:12.5px;text-align:center;padding:8px 12px;text-decoration:none}
+.sample-bar b{color:#F5C451}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.02;margin:0;letter-spacing:-.02em}
+.top{background:var(--board);color:var(--chalk)}
+header.site{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 0}
+.logo{text-decoration:none;font:800 1.3rem/1 "Bricolage Grotesque",sans-serif}
+.logo span{color:var(--yellow)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 20px;border-radius:12px;font-weight:700;text-decoration:none;border:2px solid var(--yellow)}
+.btn-main{background:var(--yellow);color:var(--ink)}
+.btn-alt{color:var(--chalk)}
+.btn-sm{min-height:40px;padding:0 14px;font-size:.92rem}
+.hero{padding:36px 0 56px}
+.hero h1{font-size:clamp(2.5rem,8.5vw,4.6rem);font-weight:800;max-width:13ch}
+.hero h1 em{font-style:normal;color:var(--yellow)}
+.hero p{font-size:1.12rem;opacity:.88;max-width:32em;margin:18px 0 0}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px;padding:0;list-style:none}
+.facts li{border:1px solid rgba(245,241,230,.35);border-radius:999px;padding:6px 12px;font-size:.88rem}
+section.block{padding:56px 0}
+section.block + section.block{border-top:1px solid var(--line)}
+section.block h2{font-size:2.2rem;font-weight:800}
+.lead{color:var(--ink-2);margin:10px 0 26px;max-width:36em}
+.batches{width:100%;border-collapse:collapse}
+.batches th{text-align:left;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);padding:0 12px 10px 0;border-bottom:2px solid var(--ink)}
+.batches td{padding:16px 12px 16px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.batches td:first-child{font-weight:700}
+.batches td:last-child{font-weight:800;white-space:nowrap}
+.batches small{display:block;font-weight:400;color:var(--ink-2)}
+.how{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:36px;align-items:start}
+.how dl{margin:0}
+.how dt{font-weight:700;font-size:1.05rem}
+.how dd{margin:4px 0 18px;color:var(--ink-2)}
+.visit{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:32px;align-items:start}
+.map{width:100%;height:300px;border:0;border-radius:16px}
+.visit .btn-main{border-color:var(--board);background:var(--board);color:var(--chalk)}
+footer{padding:28px 0 40px;font-size:.9rem;color:var(--ink-2);border-top:1px solid var(--line)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#1B1915;color:#fff;padding:12px 16px;border-radius:10px;font-size:.9rem;width:max-content;max-width:90vw;opacity:0;pointer-events:none;transition:opacity .2s}
+.toast.show{opacity:1}
+@media (max-width:780px){
+  .how,.visit{grid-template-columns:1fr;gap:20px}
+  .batches thead{display:none}
+  .batches tr{display:block;padding:14px 0;border-bottom:1px solid var(--line)}
+  .batches td{display:block;padding:2px 0;border:0}
+}
+@media (prefers-reduced-motion:reduce){.toast{transition:none}}
+</style>
+</head>
+<body>
+<a class="sample-bar" href="../../#pricing" target="_top">Sample design · fictional business · <b>Get a site like this for ₹3,999 →</b></a>
+<div class="top">
+  <div class="wrap">
+    <header class="site">
+      <a class="logo" href="#">Ascend<span>.</span> Tuition</a>
+      <a class="btn btn-main btn-sm" href="#" data-demo="opens a WhatsApp chat to book a demo class">Free demo class</a>
+    </header>
+    <section class="hero">
+      <h1>Maths and Science that <em>finally make sense.</em></h1>
+      <p>Small batches for classes 8 to 12, CBSE and State Board. Concepts first, then practice, then a weekly test so nothing slips.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#" data-demo="opens a WhatsApp chat to book a demo class">Book a free demo class</a>
+        <a class="btn btn-alt" href="#" data-demo="calls your number">Call us</a>
+      </div>
+      <ul class="facts">
+        <li>Up to 15 students per batch</li>
+        <li>Weekly tests</li>
+        <li>Saturday doubt hour</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+<section class="block">
+  <div class="wrap">
+    <h2>Batches &amp; fees</h2>
+    <p class="lead">New batches start every month. Your first class is a free demo, no commitment.</p>
+    <table class="batches">
+      <thead><tr><th>Batch</th><th>Days &amp; time</th><th>Fee</th></tr></thead>
+      <tbody>
+        <tr><td>Class 8 – 9<small>Maths + Science</small></td><td>Mon, Wed, Fri · 5:00 – 6:30 pm</td><td>₹1,800 / month</td></tr>
+        <tr><td>Class 10<small>Maths + Science, board prep</small></td><td>Tue, Thu, Sat · 5:00 – 7:00 pm</td><td>₹2,500 / month</td></tr>
+        <tr><td>Class 11 – 12<small>Physics</small></td><td>Mon, Wed · 7:00 – 8:30 pm</td><td>₹2,200 / month</td></tr>
+        <tr><td>Class 11 – 12<small>Maths</small></td><td>Tue, Thu · 7:00 – 8:30 pm</td><td>₹2,200 / month</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap how">
+    <h2>How classes work</h2>
+    <dl>
+      <dt>Concepts before shortcuts</dt>
+      <dd>Every topic starts with why it works, so students can handle questions they haven't seen before.</dd>
+      <dt>A test every week</dt>
+      <dd>Short, marked tests with results shared with parents on WhatsApp.</dd>
+      <dt>Doubt hour every Saturday</dt>
+      <dd>Bring anything from school or tuition. One-on-one if needed.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap visit">
+    <div>
+      <h2>Visit the centre</h2>
+      <p class="lead">Kothrud, Pune <em>(sample address)</em>. Office open Mon – Sat, 4 – 9 pm.</p>
+      <div class="cta">
+        <a class="btn btn-main" href="#" data-demo="opens Google Maps directions to your centre">Get directions</a>
+      </div>
+    </div>
+    <iframe class="map" title="Map of Kothrud, Pune" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Kothrud%2C%20Pune&amp;z=14&amp;output=embed"></iframe>
+  </div>
+</section>
+
+<footer><div class="wrap"><span>© Ascend Tuition Centre</span><a href="../../" target="_top">Website by Bibin V R</a></div></footer>
+<div class="toast" role="status" aria-live="polite"></div>
+<script>
+document.querySelectorAll('[data-demo]').forEach(function (a) {
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var t = document.querySelector('.toast');
+    t.textContent = 'Sample site. On your site, this button ' + a.dataset.demo + '.';
+    t.classList.add('show');
+    clearTimeout(window.__t); window.__t = setTimeout(function () { t.classList.remove('show'); }, 2800);
+  });
+});
+</script>
+</body>
+</html>
