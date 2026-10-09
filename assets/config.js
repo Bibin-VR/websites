@@ -3,7 +3,7 @@
 // "Keep payment link fresh" GitHub Action. While payUrl is empty, every
 // "Book" button opens a pre-filled booking email instead.
 window.SITE_CONFIG = {
-  payUrl: "https://rzp.io/rzp/5bywbkqy",
-  payLinkId: "plink_Tlhfw5WrIcPtqm",
-  email: ["bibin.blp", "gmail.com"]
+  payUrl: "https://rzp.io/rzp/dFSwaC9U",
+  payLinkId: "plink_Tlk573BSP9kTvg",
+  email: ["contact", "tovex.cc"]
 };

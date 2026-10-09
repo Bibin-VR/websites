@@ -91,7 +91,7 @@ def create_link(keys):
         "callback_url": SITE + "thanks.html",
         "callback_method": "get",
         "reminder_enable": False,
-        "options": {"checkout": {"name": "Bibin V R · Websites in 24 hours"}},
+        "options": {"checkout": {"name": "TOVEX · Websites in 24 hours"}},
     }
     st, res = call("POST", "/payment_links", keys, body)
     if st >= 400:
