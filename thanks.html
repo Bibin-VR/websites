@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Thank you · Bibin V R · Websites in 24 hours</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23C2410C'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='700' fill='%23fff' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500..700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.thanks{padding:64px 0 96px}
+.thanks .wrap{max-width:760px}
+.status{display:inline-flex;align-items:center;gap:10px;font-weight:700;color:var(--ok)}
+.status::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--ok)}
+.pid{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92em;background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:1px 8px;word-break:break-all}
+.thanks h2{font-size:1.7rem;margin-top:44px}
+.checklist{margin:18px 0 0;padding:0;list-style:none}
+.checklist li{padding:13px 0;border-top:1px solid var(--rule)}
+.checklist li:last-child{border-bottom:1px solid var(--rule)}
+.checklist b{display:block}
+.checklist span{color:var(--ink-2)}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><b>Bibin V R</b><span>Websites in 24 hours</span></a>
+  </div>
+</header>
+
+<main class="thanks">
+  <div class="wrap">
+
+    <section id="paid" hidden>
+      <p class="status">Payment received</p>
+      <h1 style="margin-top:16px">Thank you. Let's build your site.</h1>
+      <p class="lede">Your payment ID is <span class="pid" data-pid></span>. Razorpay is emailing you a receipt.</p>
+
+      <h2>Now send your details</h2>
+      <p style="color:var(--ink-2);margin-top:10px">Your 24 hours start as soon as we have these:</p>
+      <ul class="checklist">
+        <li><b>Business name</b><span>Exactly as you want it shown.</span></li>
+        <li><b>What you offer</b><span>Services or products, with prices if you want them on the site.</span></li>
+        <li><b>Timings and address</b><span>Opening hours, and where customers can find you.</span></li>
+        <li><b>Phone and WhatsApp number</b><span>For the call and WhatsApp buttons.</span></li>
+        <li><b>Photos and logo (optional)</b><span>Attach them to the email. We can start without them.</span></li>
+      </ul>
+      <div class="actions"><a class="btn btn-primary" id="send-details" href="#">Email my details</a></div>
+      <p class="fine">Opens a pre-filled email to <span data-email></span>. If we don't hear from you, we'll contact you at the email or phone number you paid with.</p>
+    </section>
+
+    <section id="unpaid" hidden>
+      <h1>Payment not completed</h1>
+      <p class="lede">Nothing was charged, or the payment is still processing. If money did leave your account, it will either show up as paid or be refunded automatically.</p>
+      <div class="actions">
+        <a class="btn btn-primary" data-book href="./#pricing">Try again · ₹3,999</a>
+        <a class="textlink" href="./">Back to the home page</a>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div><b>Bibin V R</b> · Websites in 24 hours<br><a data-email href="#">Email</a></div>
+    <nav aria-label="Policies">
+      <a href="terms.html">Terms</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="refunds.html">Refunds &amp; cancellation</a>
+      <a href="delivery.html">Delivery</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div>© <span data-year>2026</span> Bibin V R</div>
+  </div>
+</footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/main.js"></script>
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  var pid = q.get("razorpay_payment_id") || "";
+  var paid = q.get("razorpay_payment_link_status") === "paid" && pid;
+  document.getElementById(paid ? "paid" : "unpaid").hidden = false;
+  document.querySelectorAll("[data-pid]").forEach(function (el) { el.textContent = pid; });
+  var c = window.SITE_CONFIG || {};
+  var email = (c.email || []).join("@");
+  var body = "Payment ID: " + pid + "\n\n" +
+    "Business name:\nWhat we offer (and prices):\nTimings:\nAddress:\n" +
+    "Phone / WhatsApp for the site:\nColours or style we like (optional):\n\n" +
+    "Photos and logo attached (optional).";
+  var a = document.getElementById("send-details");
+  if (a) a.href = "mailto:" + email + "?subject=" + encodeURIComponent("Website order " + pid) +
+    "&body=" + encodeURIComponent(body);
+})();
+</script>
+</body>
+</html>

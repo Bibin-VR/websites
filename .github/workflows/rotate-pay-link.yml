@@ -1,0 +1,41 @@
+name: Keep payment link fresh
+
+# A Razorpay Payment Link can only be paid once. Every 5 minutes, check the
+# published link; if it has been paid, publish a fresh one and redeploy.
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: rotate-pay-link
+  cancel-in-progress: false
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish a fresh link if the current one was paid
+        env:
+          RAZORPAY_KEY_ID: ${{ secrets.RAZORPAY_KEY_ID }}
+          RAZORPAY_KEY_SECRET: ${{ secrets.RAZORPAY_KEY_SECRET }}
+        run: python3 scripts/rotate_pay_link.py
+
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- assets/config.js; then echo "no change"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Publish fresh payment link"
+          git pull --rebase --autostash
+          git push
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" > /dev/null || true
