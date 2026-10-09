@@ -1,0 +1,4 @@
+.claude-flow/
+ruvector.db
+**/.claude-flow/
+**/ruvector.db
